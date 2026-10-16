@@ -1,0 +1,27 @@
+name: Bug
+description: A script, guardrail, skill or doc that doesn't do what it says
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Command you ran, what you expected, what you got (paste the output).
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: Affected file
+      placeholder: scripts/guardrails/verify-all.sh
+  - type: input
+    id: version
+    attributes:
+      label: Mandate version
+      placeholder: v1.0.0
+  - type: checkboxes
+    id: failopen
+    attributes:
+      label: Fail-open?
+      options:
+        - label: A check reported OK without actually checking (this is a priority bug)

@@ -1,0 +1,6 @@
+# instruction-budget.txt — <file> <ceiling> <target> (effective = non-blank lines).
+# Ceiling only goes DOWN via --record; raising it is a hand edit citing a PD.
+# Target is the decider's decision — --record never changes it.
+# Bootstrap budget: room to fill §1/§2/§6 of the constitution in T-001, then ratchet down.
+CLAUDE.md 230 180
+AGENTS.md 70 55

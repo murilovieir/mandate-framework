@@ -1,0 +1,27 @@
+# CI calls the verification authority — and nothing else. The definition of "green" lives in
+# scripts/guardrails/verify-all.sh, which humans and every agent runtime run the same way. Its
+# anti-drift check fails if a `run:` step here does anything other than call it.
+name: governance
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+concurrency:
+  group: governance-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-all:
+    name: verify-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: verify-all
+        run: ./scripts/guardrails/verify-all.sh --ci-range "${{ github.event.pull_request.base.sha || github.event.before }}...${{ github.sha }}"

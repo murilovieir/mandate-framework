@@ -1,0 +1,1 @@
+# uow-gate allowlist — legacy Unit of Work folders without an exit_gate, one per line + "# reason".

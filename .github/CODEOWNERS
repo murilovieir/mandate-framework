@@ -1,0 +1,19 @@
+# Path → owner map. It exists BEFORE there is anyone to assign: the value is the map being diffable
+# and correct the day a second owner arrives (scale-readiness F2). With one owner it is not ceremony
+# for its own sake — it's the substrate for review routing, counterpart scope acceptance (gate G2)
+# and N2 escalation.
+#
+# Later lines win. Keep governance paths explicit so their owner can differ from product code's.
+
+*                          @{{DECIDER_GITHUB}}
+
+# Governance layer
+/CLAUDE.md                 @{{DECIDER_GITHUB}}
+/AGENTS.md                 @{{DECIDER_GITHUB}}
+/DECISIONS*.md             @{{DECIDER_GITHUB}}
+/governance.env            @{{DECIDER_GITHUB}}
+/docs/adr/                 @{{DECIDER_GITHUB}}
+/docs/rfc/                 @{{DECIDER_GITHUB}}
+/scripts/guardrails/       @{{DECIDER_GITHUB}}
+/.github/                  @{{DECIDER_GITHUB}}
+/.claude/                  @{{DECIDER_GITHUB}}

@@ -1,0 +1,27 @@
+name: Rule or method proposal
+description: Propose a new rule, guardrail, skill, agent or a change to the method
+labels: [proposal]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What goes wrong today without this rule? A concrete case beats a principle.
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: Proposed rule
+      description: The rule in one imperative sentence, plus how a script would check it.
+    validations:
+      required: true
+  - type: dropdown
+    id: pillar
+    attributes:
+      label: Pillar (M.A.N.D.A.T.E.)
+      options: [Markdown as source of truth, Architecture by ADR, Named rules enforced by script, Decision Log, Agents with bounded mandates, Tested before asserted, Executable backlog]
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

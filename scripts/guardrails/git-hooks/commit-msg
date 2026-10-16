@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Native git commit-msg hook. Install once per clone:
+#   git config core.hooksPath scripts/guardrails/git-hooks
+# Delegates to the guardrail — this file is only the entry point git knows how to call. Unlike the
+# Claude Code PreToolUse hooks (warn mode), this one BLOCKS: the commit hasn't been written yet.
+set -uo pipefail
+exec "$(git rev-parse --show-toplevel)/scripts/guardrails/commit-refs-footer.sh" --commit-msg-file "$1"

@@ -1,0 +1,1 @@
+# decision-status-consistency allowlist — exact violation line + "# reason".
